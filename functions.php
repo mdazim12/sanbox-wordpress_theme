@@ -35,6 +35,61 @@ function theme_support(){
  require_once('inc/class-wp-bootstrap-navwalker.php');
 
 
+/// services post 
+ function san_services(){
+   register_post_type('san_services',array(
+      'labels'    =>array(
+         'menu_name'    =>'Services',
+         'name'         =>'Service',
+         'add_new'      =>'Add New',
+         'all_items'    =>'Services',
+         'add_new_items'=>'Add New',
+      ),
+      'public'             => true,
+      'menu_icon'          =>'dashicons-images-alt2',
+      'supports'           =>array('thumbnail','title','editor'),
+   ));
+
+ }
+ add_action( 'init','san_services');
+
+
+ //client post
+ function san_client(){
+   register_post_type('san_client',array(
+      'labels'    =>array(
+         'menu_name'    =>'Clients',
+         'name'         =>'Clients',
+         'add_new'      =>'Add New',
+         'all_items'    =>'Clients',
+         'add_new_items'=>'Add New',
+      ),
+      'public'          =>true,
+      'menu_icon'       =>'dashicons-images-alt2',
+      'supports'        =>array('thumbnail'),
+   ));
+
+ }
+ add_action('init','san_client' );
+
+
+ //FAQ post
+ function FAQ_client(){
+   register_post_type('FAQ_client',array(
+      'labels'    =>array(
+         'menu_name'    =>'FAQ',
+         'name'         =>'FAQ',
+         'add_new'      =>'Add New Question',
+         'all_items'    =>'FAQ',
+         'add_new_items'=>'Add New Question',
+      ),
+      'public'          =>true,
+      'menu_icon'       =>'dashicons-images-alt2',
+      
+   ));
+
+ }
+ add_action('init','FAQ_client' );
 
 
 

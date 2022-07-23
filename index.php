@@ -31,58 +31,38 @@
   <section class="wrapper bg-light">
     <div class="container pt-14 pt-md-16 pb-9 pb-md-11 pb-md-17">
       <div class="row gx-md-5 gy-5 mt-n18 mt-md-n21 mb-14 mb-md-17">
-        <div class="col-md-6 col-xl-3">
-          <div class="card shadow-lg">
-            <div class="card-body">
-              <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/lineal/browser.svg" class="svg-inject icon-svg icon-svg-md text-yellow mb-3" alt="" />
-              <h4>Content Marketing</h4>
-              <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-              <a href="#" class="more hover link-yellow">Learn More</a>
+
+      <?php
+       $services_query = new WP_Query(array(
+          'post_type'     =>'san_services',
+          'post_per_page' =>-1,
+          'order'         =>'DSC'
+       ));
+      ?>
+    
+           <?php if($services_query->have_posts(  )){
+              while($services_query->have_posts(  )) : $services_query->the_post(  ); ?>
+
+            <div class="col-md-6 col-xl-3">
+              <div class="card shadow-lg">
+                <div class="card-body">
+                
+
+                  <?php the_post_thumbnail( 'thumb', array( 'class' => 'svg-inject icon-svg icon-svg-md text-yellow mb-3' )) ;?> 
+                    <h4><?php the_title( );?></h4>
+                    <p class="mb-2"><?php the_content( );?></p>
+                    <a href="#" class="more hover link-yellow">Learn More</a>
+                </div>
+                <!--/.card-body -->
+              </div>
+              <!--/.card -->
             </div>
-            <!--/.card-body -->
-          </div>
-          <!--/.card -->
-        </div>
-        <!--/column -->
-        <div class="col-md-6 col-xl-3">
-          <div class="card shadow-lg">
-            <div class="card-body">
-              <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/lineal/chat-2.svg" class="svg-inject icon-svg icon-svg-md text-green mb-3" alt="" />
-              <h4>Social Engagement</h4>
-              <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-              <a href="#" class="more hover link-green">Learn More</a>
-            </div>
-            <!--/.card-body -->
-          </div>
-          <!--/.card -->
-        </div>
-        <!--/column -->
-        <div class="col-md-6 col-xl-3">
-          <div class="card shadow-lg">
-            <div class="card-body">
-              <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/lineal/id-card.svg" class="svg-inject icon-svg icon-svg-md text-orange mb-3" alt="" />
-              <h4>Identity & Branding</h4>
-              <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-              <a href="#" class="more hover link-orange">Learn More</a>
-            </div>
-            <!--/.card-body -->
-          </div>
-          <!--/.card -->
-        </div>
-        <!--/column -->
-        <div class="col-md-6 col-xl-3">
-          <div class="card shadow-lg">
-            <div class="card-body">
-              <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/lineal/gift.svg" class="svg-inject icon-svg icon-svg-md text-blue mb-3" alt="" />
-              <h4>Product Design</h4>
-              <p class="mb-2">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
-              <a href="#" class="more hover link-blue">Learn More</a>
-            </div>
-            <!--/.card-body -->
-          </div>
-          <!--/.card -->
-        </div>
-        <!--/column -->
+
+            <?php  
+              endwhile;
+              }
+            ?>
+
       </div>
       <!--/.row -->
     </div>
@@ -96,12 +76,12 @@
     <div class="container py-14 py-md-16">
       <div class="row gx-md-8 gy-10 align-items-center">
         <div class="col-lg-6 offset-lg-1 order-lg-2 position-relative">
-          <figure class="rounded"><img class="img-fluid" src="./assets/img/photos/about27.jpg" srcset="./assets/img/photos/about27@2x.jpg 2x" alt="" /></figure>
+          <figure class="rounded"><img class="img-fluid" src="<?php echo get_template_directory_uri();?>./assets/img/photos/about27.jpg" srcset="./assets/img/photos/about27@2x.jpg 2x" alt="" /></figure>
           <div class="card shadow-lg position-absolute d-none d-md-block" style="top: 15%; left: -7%">
             <div class="card-body py-4 px-5">
               <div class="d-flex flex-row align-items-center">
                 <div>
-                  <img src="./assets/img/icons/solid/cloud-group.svg" class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-3" alt="" />
+                  <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/solid/cloud-group.svg" class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-3" alt="" />
                   
                 </div>
                 <div>
@@ -159,37 +139,29 @@
         <!-- /column -->
         <div class="col-lg-8">
           <div class="row row-cols-2 row-cols-md-4 gx-0 gx-md-8 gx-xl-12 gy-12">
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z1.png" alt="" /></figure>
+
+          <?php
+           $san_clients = new WP_Query(array(
+              'post_type'     =>'san_client',
+              'post_per_page' =>-1,
+              'order'         =>'DSC',
+           ));
+          ?>
+
+
+          <?php
+            if($san_clients->have_posts()){
+              while($san_clients->have_posts()) : $san_clients->the_post(); ?>
+
+              <div class="col">
+               <figure class="px-3 px-md-0 px-xxl-2"><?php the_post_thumbnail( );?></figure>
             </div>
-            <!--/column -->
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z2.png" alt="" /></figure>
-            </div>
-            <!--/column -->
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z3.png" alt="" /></figure>
-            </div>
-            <!--/column -->
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z4.png" alt="" /></figure>
-            </div>
-            <!--/column -->
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z5.png" alt="" /></figure>
-            </div>
-            <!--/column -->
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z6.png" alt="" /></figure>
-            </div>
-            <!--/column -->
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z7.png" alt="" /></figure>
-            </div>
-            <!--/column -->
-            <div class="col">
-              <figure class="px-3 px-md-0 px-xxl-2"><img src="<?php echo get_template_directory_uri();?>./assets/img/brands/z8.png" alt="" /></figure>
-            </div>
+
+            <?php
+            endwhile;
+            }
+          ?>
+           
             <!--/column -->
           </div>
           <!--/.row -->
@@ -575,126 +547,23 @@
       <h2 class="display-4 mb-3 text-center">Pricing FAQ</h2>
       <p class="lead text-center mb-10 px-md-16 px-lg-0">If you don't see an answer to your question, you can send us an email from our contact form.</p>
       <div class="row">
-        <div class="col-lg-6 mb-0">
-          <div id="accordion-1" class="accordion-wrapper">
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-1-1">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-1" aria-expanded="false" aria-controls="accordion-collapse-1-1">Can I cancel my subscription?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-1-1" class="collapse" aria-labelledby="accordion-heading-1-1" data-bs-target="#accordion-1">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-1-2">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-2" aria-expanded="false" aria-controls="accordion-collapse-1-2">Which payment methods do you accept?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-1-2" class="collapse" aria-labelledby="accordion-heading-1-2" data-bs-target="#accordion-1">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-1-3">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-3" aria-expanded="false" aria-controls="accordion-collapse-1-3">How can I manage my Account?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-1-3" class="collapse" aria-labelledby="accordion-heading-1-3" data-bs-target="#accordion-1">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-1-4">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-4" aria-expanded="false" aria-controls="accordion-collapse-1-4">Is my credit card information secure?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-1-4" class="collapse" aria-labelledby="accordion-heading-1-4" data-bs-target="#accordion-1">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.accordion-wrapper -->
-        </div>
-        <!--/column -->
-        <div class="col-lg-6">
-          <div id="accordion-2" class="accordion-wrapper">
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-2-1">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-2-1" aria-expanded="false" aria-controls="accordion-collapse-2-1">How do I get my subscription receipt?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-2-1" class="collapse" aria-labelledby="accordion-heading-2-1" data-bs-target="#accordion-2">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-2-2">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-2-2" aria-expanded="false" aria-controls="accordion-collapse-2-2">Are there any discounts for people in need?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-2-2" class="collapse" aria-labelledby="accordion-heading-2-2" data-bs-target="#accordion-2">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-2-3">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-2-3" aria-expanded="false" aria-controls="accordion-collapse-2-3">Do you offer a free trial edit?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-2-3" class="collapse" aria-labelledby="accordion-heading-2-3" data-bs-target="#accordion-2">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
-            <div class="card accordion-item">
-              <div class="card-header" id="accordion-heading-2-4">
-                <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-2-4" aria-expanded="false" aria-controls="accordion-collapse-2-4">How do I reset my Account password?</button>
-              </div>
-              <!-- /.card-header -->
-              <div id="accordion-collapse-2-4" class="collapse" aria-labelledby="accordion-heading-2-4" data-bs-target="#accordion-2">
-                <div class="card-body">
-                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.collapse -->
-            </div>
-            <!-- /.card -->
+        
+
+
+          <?php
+           $FAQ_query = new WP_Query(array(
+              'post_type'     =>'FAQ_client',
+              'post_per_page' =>-1,
+              'order'         =>'DSC',
+            ));
+          ?>
+
+
+
+
+           
+
+            
           </div>
           <!-- /.accordion-wrapper -->
         </div>
