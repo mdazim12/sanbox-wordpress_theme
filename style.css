@@ -51,3 +51,19 @@ with others.
 
 /*	0. CSS Reset
 /* -------------------------------------------------------------------------- */
+
+
+
+.top_class{
+	margin-top: 30px;
+}
+.navbar-expand-lg.fancy:not(.fixed) .navbar-collapse-wrapper {
+    padding: 0 1.5rem 0 1.5rem;
+    margin-top: 0px!important;
+}
+
+
+
+
+
+
