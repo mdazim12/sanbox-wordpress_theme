@@ -65,7 +65,7 @@ function theme_support(){
          'add_new_items'=>'Add New',
       ),
       'public'          =>true,
-      'menu_icon'       =>'dashicons-images-alt2',
+      'menu_icon'       =>'dashicons-grid-view',
       'supports'        =>array('thumbnail'),
    ));
 
@@ -84,7 +84,7 @@ function theme_support(){
          'add_new_items'=>'Add New Question',
       ),
       'public'          =>true,
-      'menu_icon'       =>'dashicons-images-alt2',
+      'menu_icon'       =>'dashicons-editor-rtl',
       
    ));
 
