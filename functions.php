@@ -92,6 +92,9 @@ function theme_support(){
  add_action('init','FAQ_client' );
 
 
+ 
+
+
 
 
 

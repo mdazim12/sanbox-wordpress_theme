@@ -542,38 +542,84 @@
   <!-- /section -->
 
 
-  <section class="wrapper bg-light">
-    <div class="container py-14 py-md-16">
-      <h2 class="display-4 mb-3 text-center">Pricing FAQ</h2>
-      <p class="lead text-center mb-10 px-md-16 px-lg-0">If you don't see an answer to your question, you can send us an email from our contact form.</p>
-      <div class="row">
-        
+            
+
+          
 
 
-          <?php
+
+<section class="wrapper bg-light">
+  <div class="container py-14 py-md-16">
+    <h2 class="display-4 mb-3 text-center">Pricing FAQ</h2>
+    <p class="lead text-center mb-10 px-md-16 px-lg-0">If you don't see an answer to your question, you can send us an email from our contact form.</p>
+    <div class="row">
+
+       <?php
            $FAQ_query = new WP_Query(array(
               'post_type'     =>'FAQ_client',
               'post_per_page' =>-1,
               'order'         =>'DSC',
             ));
+
           ?>
 
-
-
-
-           
-
-            
+    <?php
+      if($FAQ_query->have_posts(  )){
+        while($FAQ_query->have_posts(  )) : $FAQ_query->the_post(  ); ?>
+      <div class="col-lg-6 mb-0">
+        <div id="accordion-<?php $i =1; $i++; echo $i;?>" class="accordion-wrapper">
+          <div class="card accordion-item">
+            <div class="card-header" id="accordion-heading-1-<?php $i =1; $i++; echo $i;?>">
+              <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-1" aria-expanded="false" aria-controls="accordion-collapse-1-1 ?>"><?php the_title( );?></button>
+            </div>
+            <!-- /.card-header -->
+            <div id="accordion-collapse-1-<?php $i =1; $i++; echo $i;?>" class="collapse" aria-labelledby="accordion-heading-1-<?php $i =1; $i++; echo $i;?>" data-bs-target="#accordion1-<?php $i =1; $i++; echo $i;?>">
+              <div class="card-body">
+                <p><?php the_content(  );?></p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.collapse -->
           </div>
-          <!-- /.accordion-wrapper -->
         </div>
-        <!--/column -->
+        <!-- /.accordion-wrapper -->
       </div>
-      <!--/.row -->
+     <?php endwhile;
+      }
+    ?>
+
+      
+      <!--/column -->
+
+      <div class="col-lg-6 mb-0">
+        <div id="accordion-1" class="accordion-wrapper">
+          <div class="card accordion-item">
+            <div class="card-header" id="accordion-heading-1-1">
+              <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-2" aria-expanded="false" aria-controls="accordion-collapse-1-1">Can I cancel my subscription?</button>
+            </div>
+            <!-- /.card-header -->
+            <div id="accordion-collapse-1-2" class="collapse" aria-labelledby="accordion-heading-1-2" data-bs-target="#accordion-1">
+              <div class="card-body">
+                <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sed odio dui. Cras justo odio, dapibus ac facilisis.</p>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.collapse -->
+          </div>
+        </div>
+        <!-- /
+
+      
+
+
+
+      <!--/column -->
     </div>
-    <!-- /.container -->
-  </section>
-  <!-- /section -->
+    <!--/.row -->
+  </div>
+  <!-- /.container -->
+</section>
+<!-- /section -->
 
 
 
@@ -753,11 +799,15 @@
         <div class="swiper-container dots-closer blog grid-view mb-6" data-margin="0" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
           <div class="swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
+        
+        <?php 
+          if(have_posts(  )){
+            while(have_posts(  )) : the_post(  ); ?>
+                <div class="swiper-slide">
                 <div class="item-inner">
                   <article>
                     <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale"><a href="#"> <img src="<?php echo get_template_directory_uri();?>./assets/img/photos/b4.jpg" alt="" /></a>
+                      <figure class="card-img-top overlay overlay-1 hover-scale"><a href="#"> <?php the_post_thumbnail( );?></a>
                         <figcaption>
                           <h5 class="from-top mb-0">Read More</h5>
                         </figcaption>
@@ -765,21 +815,21 @@
                       <div class="card-body">
                         <div class="post-header">
                           <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category">Coding</a>
+                            <a href="#" class="hover" rel="category"><?php the_category(" " );?>/a>
                           </div>
                           <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">Ligula tristique quis risus</a></h2>
+                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href=""><?php the_title(  );?></a></h2>
                         </div>
                         <!-- /.post-header -->
                         <div class="post-content">
-                          <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
+                          <p><?php the_content( );?></p>
                         </div>
                         <!-- /.post-content -->
                       </div>
                       <!--/.card-body -->
                       <div class="card-footer">
                         <ul class="post-meta d-flex mb-0">
-                          <li class="post-date"><i class="uil uil-calendar-alt"></i><span>14 Apr 2022</span></li>
+                          <li class="post-date"><i class="uil uil-calendar-alt"></i><span><?php the_date('d-M-y' ); ?></span></li>
                           <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>4</a></li>
                           <li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>5</a></li>
                         </ul>
@@ -793,129 +843,18 @@
                 </div>
                 <!-- /.item-inner -->
               </div>
-              <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <article>
-                    <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale"><a href="#"> <img src="<?php echo get_template_directory_uri();?>./assets/img/photos/b5.jpg" alt="" /></a>
-                        <figcaption>
-                          <h5 class="from-top mb-0">Read More</h5>
-                        </figcaption>
-                      </figure>
-                      <div class="card-body">
-                        <div class="post-header">
-                          <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category">Workspace</a>
-                          </div>
-                          <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">Nullam id dolor elit id nibh</a></h2>
-                        </div>
-                        <!-- /.post-header -->
-                        <div class="post-content">
-                          <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
-                        </div>
-                        <!-- /.post-content -->
-                      </div>
-                      <!--/.card-body -->
-                      <div class="card-footer">
-                        <ul class="post-meta d-flex mb-0">
-                          <li class="post-date"><i class="uil uil-calendar-alt"></i><span>29 Mar 2022</span></li>
-                          <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>3</a></li>
-                          <li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>3</a></li>
-                        </ul>
-                        <!-- /.post-meta -->
-                      </div>
-                      <!-- /.card-footer -->
-                    </div>
-                    <!-- /.card -->
-                  </article>
-                  <!-- /article -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <article>
-                    <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale"><a href="#"> <img src="<?php echo get_template_directory_uri();?>./assets/img/photos/b6.jpg" alt="" /></a>
-                        <figcaption>
-                          <h5 class="from-top mb-0">Read More</h5>
-                        </figcaption>
-                      </figure>
-                      <div class="card-body">
-                        <div class="post-header">
-                          <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category">Meeting</a>
-                          </div>
-                          <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">Ultricies fusce porta elit</a></h2>
-                        </div>
-                        <!-- /.post-header -->
-                        <div class="post-content">
-                          <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
-                        </div>
-                        <!-- /.post-content -->
-                      </div>
-                      <!--/.card-body -->
-                      <div class="card-footer">
-                        <ul class="post-meta d-flex mb-0">
-                          <li class="post-date"><i class="uil uil-calendar-alt"></i><span>26 Feb 2022</span></li>
-                          <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>6</a></li>
-                          <li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>3</a></li>
-                        </ul>
-                        <!-- /.post-meta -->
-                      </div>
-                      <!-- /.card-footer -->
-                    </div>
-                    <!-- /.card -->
-                  </article>
-                  <!-- /article -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <article>
-                    <div class="card">
-                      <figure class="card-img-top overlay overlay-1 hover-scale"><a href="#"> <img src="<?php echo get_template_directory_uri();?>./assets/img/photos/b7.jpg" alt="" /></a>
-                        <figcaption>
-                          <h5 class="from-top mb-0">Read More</h5>
-                        </figcaption>
-                      </figure>
-                      <div class="card-body">
-                        <div class="post-header">
-                          <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category">Business Tips</a>
-                          </div>
-                          <!-- /.post-category -->
-                          <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="./blog-post.html">Morbi leo risus porta eget</a></h2>
-                        </div>
-                        <!-- /.post-header -->
-                        <div class="post-content">
-                          <p>Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
-                        </div>
-                        <!-- /.post-content -->
-                      </div>
-                      <!--/.card-body -->
-                      <div class="card-footer">
-                        <ul class="post-meta d-flex mb-0">
-                          <li class="post-date"><i class="uil uil-calendar-alt"></i><span>7 Jan 2022</span></li>
-                          <li class="post-comments"><a href="#"><i class="uil uil-comment"></i>2</a></li>
-                          <li class="post-likes ms-auto"><a href="#"><i class="uil uil-heart-alt"></i>5</a></li>
-                        </ul>
-                        <!-- /.post-meta -->
-                      </div>
-                      <!-- /.card-footer -->
-                    </div>
-                    <!-- /.card -->
-                  </article>
-                  <!-- /article -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
+        <?php  endwhile;
+          }
+        ?>
+            
+
+
+
+             
+
+
+
+
               <!--/.swiper-slide -->
             </div>
             <!--/.swiper-wrapper -->
