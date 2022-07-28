@@ -337,78 +337,53 @@
       <!-- /.row -->
       <div class="grid grid-view projects-masonry">
         <div class="row gx-md-8 gy-10 gy-md-13 isotope">
+
+
+        <?php
+          $project_query= new WP_Query(array(
+              'post_type'         =>'san_project',
+              'post_per_page'     =>-1,
+              'order'             =>'DSC',
+          ));
+        ?>
+
+        <?php
+          if($project_query->have_posts(  )){
+            while($project_query->have_posts(  )) : $project_query->the_post(  ); ?>
+
           <div class="project item col-md-6 col-xl-4">
-            <figure class="rounded mb-6"><img src="<?php echo get_template_directory_uri();?>./assets/img/photos/pd7.jpg" srcset="./assets/img/photos/pd7@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd7-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
+            <figure class="rounded mb-6"><?php the_post_thumbnail();?><a class="item-link" href="<?php get_the_post_thumbnail(  );?>" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
             <div class="project-details d-flex justify-content-center flex-column">
               <div class="post-header">
-                <h2 class="post-title h3 fs-22"><a href="./single-project.html" class="link-dark">Cras Fermentum Sem</a></h2>
-                <div class="post-category text-ash">Stationary</div>
+                <h2 class="post-title h3 fs-22"><a href="./single-project.html" class="link-dark"><?php the_title();?></a></h2>
+                <div class="post-category text-ash">
+                  <?php
+                    $category = get_the_terms(get_the_ID(),'portfolio_taxonomy' );
+                    foreach($category as $categorys){
+                      $port_category = $categorys->name;
+                      $link = get_term_link( $categorys,'portfolio_taxonomy' );
+                      echo '<a href="'.$link.'">'.$port_category.'</a> ';
+                    }
+                  
+                  ?>
+                </div>
               </div>
               <!-- /.post-header -->
             </div>
             <!-- /.project-details -->
           </div>
           <!-- /.item -->
-          <div class="project item col-md-6 col-xl-4">
-            <figure class="rounded mb-6"><img src="<?php echo get_template_directory_uri();?>./assets/img/photos/pd8.jpg" srcset="./assets/img/photos/pd8@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd8-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-            <div class="project-details d-flex justify-content-center flex-column">
-              <div class="post-header">
-                <h2 class="post-title h3 fs-22"><a href="./single-project2.html" class="link-dark">Mollis Ipsum Mattis</a></h2>
-                <div class="post-category text-ash">Magazine, Book</div>
-              </div>
-              <!-- /.post-header -->
-            </div>
-            <!-- /.project-details -->
-          </div>
-          <!-- /.item -->
-          <div class="project item col-md-6 col-xl-4">
-            <figure class="rounded mb-6"><img src="./assets/img/photos/pd9.jpg" srcset="./assets/img/photos/pd9@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd9-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-            <div class="project-details d-flex justify-content-center flex-column">
-              <div class="post-header">
-                <h2 class="post-title h3 fs-22"><a href="./single-project3.html" class="link-dark">Ipsum Ultricies Cursus</a></h2>
-                <div class="post-category text-ash">Packaging</div>
-              </div>
-              <!-- /.post-header -->
-            </div>
-            <!-- /.project-details -->
-          </div>
-          <!-- /.item -->
-          <div class="project item col-md-6 col-xl-4">
-            <figure class="rounded mb-6"><img src="<?php echo get_template_directory_uri();?>./assets/img/photos/pd10.jpg" srcset="./assets/img/photos/pd10@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd10-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-            <div class="project-details d-flex justify-content-center flex-column">
-              <div class="post-header">
-                <h2 class="post-title h3 fs-22"><a href="./single-project.html" class="link-dark">Inceptos Euismod Egestas</a></h2>
-                <div class="post-category text-ash">Stationary, Branding</div>
-              </div>
-              <!-- /.post-header -->
-            </div>
-            <!-- /.project-details -->
-          </div>
-          <!-- /.item -->
-          <div class="project item col-md-6 col-xl-4">
-            <figure class="rounded mb-6"><img src="./assets/img/photos/pd11.jpg" srcset="./assets/img/photos/pd11@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd11-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-            <div class="project-details d-flex justify-content-center flex-column">
-              <div class="post-header">
-                <h2 class="post-title h3 fs-22"><a href="./single-project2.html" class="link-dark">Ipsum Mollis Vulputate</a></h2>
-                <div class="post-category text-ash">Packaging</div>
-              </div>
-              <!-- /.post-header -->
-            </div>
-            <!-- /.project-details -->
-          </div>
-          <!-- /.item -->
-          <div class="project item col-md-6 col-xl-4">
-            <figure class="rounded mb-6"><img src="<?php echo get_template_directory_uri();?>./assets/img/photos/pd12.jpg" srcset="./assets/img/photos/pd12@2x.jpg 2x" alt="" /><a class="item-link" href="./assets/img/photos/pd12-full.jpg" data-glightbox data-gallery="projects-group"><i class="uil uil-focus-add"></i></a></figure>
-            <div class="project-details d-flex justify-content-center flex-column">
-              <div class="post-header">
-                <h2 class="post-title h3 fs-22"><a href="./single-project3.html" class="link-dark">Porta Ornare Cras</a></h2>
-                <div class="post-category text-ash">Branding</div>
-              </div>
-              <!-- /.post-header -->
-            </div>
-            <!-- /.project-details -->
-          </div>
-          <!-- /.item -->
+
+        <?php  endwhile;
+          }
+        ?>
+
+          
+          
+         
+          
+          
+          
         </div>
         <!-- /.row -->
       </div>
@@ -822,7 +797,7 @@
                         </div>
                         <!-- /.post-header -->
                         <div class="post-content">
-                          <p><?php the_content( );?></p>
+                          <p><?php echo wp_trim_words( get_the_content(), 20, '' )?></p>
                         </div>
                         <!-- /.post-content -->
                       </div>

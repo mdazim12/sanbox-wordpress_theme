@@ -92,6 +92,34 @@ function theme_support(){
  add_action('init','FAQ_client' );
 
 
+ //project
+ function san_project(){
+   register_post_type('san_project',array(
+      'labels'       =>array(
+         'menu_name'       =>'Project',
+         'name'            =>'Project',
+         'add_new'         =>'Add Project',
+         'all_items'       =>'All Project',
+         'add_new_items'   =>'Add Project',
+      ),
+      'public'             =>true,
+      'menu_icon'          =>'dashicons-format-gallery',
+      'supports'           =>array('title','thumbnail'),
+   ));
+
+   register_taxonomy('portfolio_taxonomy','san_project',array(
+      'labels'        =>array(
+            'name'         =>'Project Category',
+            'add_new_item'=>'Add new Project Category'
+      ),
+      'public'       =>true,
+      'hierarchical' =>true,
+      
+      
+   ));
+ }
+ add_action( 'init','san_project' );
+
  
 
 
