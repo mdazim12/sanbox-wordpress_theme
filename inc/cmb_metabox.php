@@ -61,6 +61,88 @@ function cmb2_sample_metaboxes() {
 		'type' => 'text_url',
 	) );
 
+}
+
+
+
+
+//Price metabox
+
+add_action( 'cmb2_admin_init', 'san_price_metabox' );
+/**
+ * Define the metabox and field configurations.
+ */
+function san_price_metabox() {
+
+	/**
+	 * Initiate the metabox
+	 */
+	$sab_price = new_cmb2_box( array(
+		'id'            => 'san_price',
+		'title'         => __( 'Price Field', 'cmb2' ),
+		'object_types'  => 'san_price', 
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, 
+		
+	) );
+
+	// Price package fields
+	$sab_price->add_field( array(
+		'name'       => __( 'Package Price', 'san' ),
+		'desc'       => __( 'This fields for Package Price', 'san' ),
+		'id'         => 'san_team_price',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats', 
+	) );
+
+	// Price package year fields
+	$sab_price->add_field( array(
+		'name'       => __( 'Package Price Yearly', 'san' ),
+		'desc'       => __( 'This fields for Package Price', 'san' ),
+		'id'         => 'san_team_price_year',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats', 
+	) );
+
+	// Price project fields
+	$sab_price->add_field( array(
+		'name' => __( 'Number Of Project', 'san' ),
+		'desc' => __( 'How  many project you do offer (optional)', 'san' ),
+		'id'   => 'san_price_num_project',
+		'type' => 'text',
+		
+	) );
+
+	// Price api fields
+	$sab_price->add_field( array(
+		'name' => __( 'Number Of API', 'san' ),
+		'desc' => __( 'How  many API you do offer (optional)', 'san' ),
+		'id'   => 'san_price_num_api',
+		'type' => 'text',
+		
+	) );
+
+	// Price MB fields
+	$sab_price->add_field( array(
+		'name' => __( 'Number Of MB', 'san' ),
+		'desc' => __( 'How  many MB, you do offer (optional)', 'san' ),
+		'id'   => 'san_price_num_mb',
+		'type' => 'text',
+		
+	) );
+
+	// Price supports fields
+	$sab_price->add_field( array(
+		'name' => __( 'Supports Time', 'san' ),
+		'desc' => __( 'How  many time give you customare suppotr(optional)', 'san' ),
+		'id'   => 'san_price_num_supports',
+		'type' => 'text',
+		
+	) );
+
+	
+
 	
 
 }

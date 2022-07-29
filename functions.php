@@ -139,6 +139,23 @@ function theme_support(){
  }
  add_action( 'init','san_team' );
 
+ //price
+  function san_price(){
+   register_post_type('san_price',array(
+      'labels'    =>array(
+         'menu_name'       =>'Price',
+         'name'            =>'Price List',
+         'add_new'         =>'Add Price list',
+         'add_new_items'   =>'Add Price List',
+         'add_items'       =>'Price List',
+      ),
+      'public'             =>true,
+      'menu_icon'          =>'dashicons-money-alt',
+      'supports'           =>array('title'),
+   ));
+  }
+  add_action('init','san_price');
+
 
 
 

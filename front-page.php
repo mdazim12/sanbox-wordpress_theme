@@ -386,22 +386,44 @@
           <p class="mb-0 ps-3">Yearly <span class="text-red">(Save 30%)</span></p>
         </div>
         <div class="row gx-0 gy-6 mt-2">
+
+        <?php
+          $san_price = new WP_Query(array(
+            'post_type'   =>'san_price',
+            'post_per_page'=>-1,
+            'post_order'   =>'ASC'
+          ));
+        ?>
+
+        <?php
+         if($san_price->have_posts(  )){
+            while($san_price->have_posts(  )) : $san_price->the_post(  ); 
+            $san_team_price = get_post_meta( get_the_ID(),'san_team_price', true );
+            $san_team_price_year = get_post_meta( get_the_ID(),'san_team_price_year', true );
+            $san_price_num_project = get_post_meta( get_the_ID(),'san_price_num_project', true );
+            $san_price_num_api = get_post_meta( get_the_ID(),'san_price_num_api', true );
+            $san_price_num_mb = get_post_meta( get_the_ID(),'san_price_num_mb', true );
+            $san_price_num_supports = get_post_meta( get_the_ID(),'san_price_num_supports', true );
+
+
+            ?>
+          
           <div class="col-md-6 col-lg-3">
             <div class="pricing card shadow-none">
               <div class="card-body">
                 <div class="icon btn btn-circle btn-lg btn-soft-primary disabled"> <i class="uil uil-shopping-bag"></i> </div>
-                <h4 class="card-title">Basic Plan</h4>
+                <h4 class="card-title"> <?php the_title();?> </h4>
                 <div class="prices text-dark">
-                  <div class="price price-show justify-content-start"><span class="price-currency">$</span><span class="price-value">9</span> <span class="price-duration">mo</span></div>
-                  <div class="price price-hide price-hidden justify-content-start"><span class="price-currency">$</span><span class="price-value">99</span> <span class="price-duration">yr</span></div>
+                  <div class="price price-show justify-content-start"><span class="price-currency">$</span><span class="price-value"><?php echo $san_team_price;?></span> <span class="price-duration">mo</span></div>
+                  <div class="price price-hide price-hidden justify-content-start"><span class="price-currency">$</span><span class="price-value"><?php echo $san_team_price_year;?></span> <span class="price-duration">yr</span></div>
                 </div>
                 <!--/.prices -->
                 <ul class="icon-list bullet-bg bullet-soft-primary mt-7 mb-8">
-                  <li><i class="uil uil-check"></i><span><strong>1</strong> Project </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>100K</strong> API Access </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>100MB</strong> Storage </span></li>
+                  <li><i class="uil uil-check"></i><span><strong><?php echo $san_price_num_project;?></strong> Project </span></li>
+                  <li><i class="uil uil-check"></i><span><strong><?php echo  $san_price_num_api;?></strong> API Access </span></li>
+                  <li><i class="uil uil-check"></i><span><strong><?php echo  $san_price_num_mb; ?></strong> Storage </span></li>
                   <li><i class="uil uil-times bullet-soft-red"></i><span> Weekly <strong>Reports</strong> </span></li>
-                  <li><i class="uil uil-times bullet-soft-red"></i><span> 7/24 <strong>Support</strong></span></li>
+                  <li><i class="uil uil-times bullet-soft-red"></i><span> <?php echo $san_price_num_supports;?> <strong>Support</strong></span></li>
                 </ul>
                 <a href="#" class="btn btn-soft-primary rounded-pill">Choose Plan</a>
               </div>
@@ -410,77 +432,11 @@
             <!--/.pricing -->
           </div>
           <!--/column -->
-          <div class="col-md-6 col-lg-3">
-            <div class="pricing card shadow-none">
-              <div class="card-body">
-                <div class="icon btn btn-circle btn-lg btn-soft-primary disabled"> <i class="uil uil-shopping-cart-alt"></i> </div>
-                <h4 class="card-title">Premium Plan</h4>
-                <div class="prices text-dark">
-                  <div class="price price-show justify-content-start"><span class="price-currency">$</span><span class="price-value">19</span> <span class="price-duration">mo</span></div>
-                  <div class="price price-hide price-hidden justify-content-start"><span class="price-currency">$</span><span class="price-value">199</span> <span class="price-duration">yr</span></div>
-                </div>
-                <!--/.prices -->
-                <ul class="icon-list bullet-bg bullet-soft-primary mt-7 mb-8">
-                  <li><i class="uil uil-check"></i><span><strong>5</strong> Projects </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>100K</strong> API Access </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>200MB</strong> Storage </span></li>
-                  <li><i class="uil uil-check"></i><span> Weekly <strong>Reports</strong></span></li>
-                  <li><i class="uil uil-times bullet-soft-red"></i><span> 7/24 <strong>Support</strong></span></li>
-                </ul>
-                <a href="#" class="btn btn-soft-primary rounded-pill">Choose Plan</a>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <!--/.pricing -->
-          </div>
-          <!--/column -->
-          <div class="col-md-6 col-lg-3">
-            <div class="pricing card bg-soft-primary">
-              <div class="card-body">
-                <div class="icon btn btn-circle btn-lg btn-primary disabled"> <i class="uil uil-store"></i> </div>
-                <h4 class="card-title">Corporate Plan</h4>
-                <div class="prices text-dark">
-                  <div class="price price-show justify-content-start"><span class="price-currency">$</span><span class="price-value">29</span> <span class="price-duration">mo</span></div>
-                  <div class="price price-hide price-hidden justify-content-start"><span class="price-currency">$</span><span class="price-value">299</span> <span class="price-duration">yr</span></div>
-                </div>
-                <!--/.prices -->
-                <ul class="icon-list bullet-bg bullet-primary mt-7 mb-8">
-                  <li><i class="uil uil-check"></i><span><strong>20</strong> Projects </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>300K</strong> API Access </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>500MB</strong> Storage </span></li>
-                  <li><i class="uil uil-check"></i><span> Weekly <strong>Reports</strong></span></li>
-                  <li><i class="uil uil-check"></i><span> 7/24 <strong>Support</strong></span></li>
-                </ul>
-                <a href="#" class="btn btn-primary rounded-pill">Choose Plan</a>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <!--/.pricing -->
-          </div>
-          <!--/column -->
-          <div class="col-md-6 col-lg-3">
-            <div class="pricing card shadow-none">
-              <div class="card-body">
-                <div class="icon btn btn-circle btn-lg btn-soft-primary disabled"> <i class="uil uil-store-alt"></i> </div>
-                <h4 class="card-title">Community Plan</h4>
-                <div class="prices text-dark">
-                  <div class="price price-show justify-content-start"><span class="price-currency">$</span><span class="price-value">49</span> <span class="price-duration">mo</span></div>
-                  <div class="price price-hide price-hidden justify-content-start"><span class="price-currency">$</span><span class="price-value">499</span> <span class="price-duration">yr</span></div>
-                </div>
-                <!--/.prices -->
-                <ul class="icon-list bullet-bg bullet-soft-primary mt-7 mb-8">
-                  <li><i class="uil uil-check"></i><span><strong>90</strong> Projects </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>900K</strong> API Access </span></li>
-                  <li><i class="uil uil-check"></i><span><strong>900MB</strong> Storage </span></li>
-                  <li><i class="uil uil-check"></i><span> Weekly <strong>Reports</strong> </span></li>
-                  <li><i class="uil uil-check"></i><span> 7/24 <strong>Support</strong></span></li>
-                </ul>
-                <a href="#" class="btn btn-soft-primary rounded-pill">Choose Plan</a>
-              </div>
-              <!--/.card-body -->
-            </div>
-            <!--/.pricing -->
-          </div>
+
+         <?php   endwhile;
+         }
+        ?>
+
         </div>
         <!--/.row -->
       </div>
