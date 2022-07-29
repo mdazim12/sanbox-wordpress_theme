@@ -243,71 +243,50 @@
           <div class="swiper-container text-center mb-6" data-margin="30" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
             <div class="swiper">
               <div class="swiper-wrapper">
+
+              <?php
+                $team_query = new WP_Query(array(
+                  'post_type'     =>'san_team',
+                  'post_order'    =>'DSC',
+                  'post_per_page' =>-1,
+                ));
+              ?>
+               
+
+              <?php
+                if( $team_query->have_posts(  )){
+                  while( $team_query->have_posts(  )) :  $team_query->the_post(  ); 
+                  $team_role  = get_post_meta( get_the_ID(),'san_team_role', true );
+                  $team_fb  = get_post_meta( get_the_ID(),'san_tean_facebook', true );
+                  $team_twi  = get_post_meta( get_the_ID(),'san_team_twitter', true );
+                  $team_linkdin  = get_post_meta( get_the_ID(),'san_team_linkdin', true );
+                  ?>
+
                 <div class="swiper-slide">
-                  <img class="rounded-circle w-20 mx-auto mb-4" src=".<?php echo get_template_directory_uri();?>/assets/img/avatars/t1.jpg" srcset="./assets/img/avatars/t1@2x.jpg 2x" alt="" />
-                  <h4 class="mb-1">Cory Zamora</h4>
-                  <div class="meta mb-2">Marketing Specialist</div>
-                  <p class="mb-2">Etiam porta sem magna malesuada mollis.</p>
+                <?php the_post_thumbnail('blog-thumb', array( 'class' => 'rounded-circle w-20 mx-auto mb-4' ));?>
+                  <h4 class="mb-1"><?php the_title();?></h4>
+                  <div class="meta mb-2"><?php echo $team_role; ?></div>
+                  <p class="mb-2"> <?php echo wp_trim_words( get_the_content(), 20, '' )?> </p>
                   <nav class="nav social justify-content-center text-center mb-0">
-                    <a href="#"><i class="uil uil-twitter"></i></a>
-                    <a href="#"><i class="uil uil-slack"></i></a>
-                    <a href="#"><i class="uil uil-linkedin"></i></a>
+                    <a href="<?php echo $team_fb ;?>"><i class="uil uil-youtube"></i></a>
+                    <a href="<?php echo $team_twi ;?>"><i class="uil uil-facebook-f"></i></a>
+                    <a href="<?php echo $team_linkdin ;?>"><i class="uil uil-dribbble"></i></a>
                   </nav>
                   <!-- /.social -->
                 </div>
                 <!--/.swiper-slide -->
-                <div class="swiper-slide">
-                  <img class="rounded-circle w-20 mx-auto mb-4" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/t2.jpg" srcset="./assets/img/avatars/t2@2x.jpg 2x" alt="" />
-                  <h4 class="mb-1">Coriss Ambady</h4>
-                  <div class="meta mb-2">Financial Analyst</div>
-                  <p class="mb-2">Aenean eu leo quam. Pellentesque ornare lacinia.</p>
-                  <nav class="nav social justify-content-center text-center mb-0">
-                    <a href="#"><i class="uil uil-youtube"></i></a>
-                    <a href="#"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#"><i class="uil uil-dribbble"></i></a>
-                  </nav>
-                  <!-- /.social -->
-                </div>
-                <!--/.swiper-slide -->
-                <div class="swiper-slide">
-                  <img class="rounded-circle w-20 mx-auto mb-4" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/t3.jpg" srcset="./assets/img/avatars/t3@2x.jpg 2x" alt="" />
-                  <h4 class="mb-1">Nikolas Brooten</h4>
-                  <div class="meta mb-2">Sales Manager</div>
-                  <p class="mb-2">Donec ornare elit quam porta gravida at eget.</p>
-                  <nav class="nav social justify-content-center text-center mb-0">
-                    <a href="#"><i class="uil uil-linkedin"></i></a>
-                    <a href="#"><i class="uil uil-tumblr-square"></i></a>
-                    <a href="#"><i class="uil uil-facebook-f"></i></a>
-                  </nav>
-                  <!-- /.social -->
-                </div>
-                <!--/.swiper-slide -->
-                <div class="swiper-slide">
-                  <img class="rounded-circle w-20 mx-auto mb-4" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/t4.jpg" srcset="./assets/img/avatars/t4@2x.jpg 2x" alt="" />
-                  <h4 class="mb-1">Jackie Sanders</h4>
-                  <div class="meta mb-2">Investment Planner</div>
-                  <p class="mb-2">Nullam risus eget urna mollis ornare vel eu leo.</p>
-                  <nav class="nav social justify-content-center text-center mb-0">
-                    <a href="#"><i class="uil uil-twitter"></i></a>
-                    <a href="#"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#"><i class="uil uil-dribbble"></i></a>
-                  </nav>
-                  <!-- /.social -->
-                </div>
-                <!--/.swiper-slide -->
-                <div class="swiper-slide">
-                  <img class="rounded-circle w-20 mx-auto mb-4" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/t5.jpg" srcset="./assets/img/avatars/t5@2x.jpg 2x" alt="" />
-                  <h4 class="mb-1">Tina Geller</h4>
-                  <div class="meta mb-2">Assistant Buyer</div>
-                  <p class="mb-2">Vivamus sagittis lacus vel augue laoreet rutrum.</p>
-                  <nav class="nav social justify-content-center text-center mb-0">
-                    <a href="#"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#"><i class="uil uil-slack"></i></a>
-                    <a href="#"><i class="uil uil-dribbble"></i></a>
-                  </nav>
-                  <!-- /.social -->
-                </div>
-                <!--/.swiper-slide -->
+
+              <?php   endwhile;
+                }
+              
+              ?>
+                
+               
+
+
+               
+               
+               
               </div>
               <!--/.swiper-wrapper -->
             </div>
@@ -378,11 +357,6 @@
           }
         ?>
 
-          
-          
-         
-          
-          
           
         </div>
         <!-- /.row -->

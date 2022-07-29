@@ -120,6 +120,46 @@ function theme_support(){
  }
  add_action( 'init','san_project' );
 
+
+ //Team
+ function san_team(){
+   register_post_type( 'san_team',array(
+      'labels'    =>array(
+         'menu_name'       =>'Team',
+         'name'            =>'All Membber',
+         'add_new'         =>' Add New Memeber',
+         'add_items'       =>'All Membber',
+         'add_new_items'   =>'Add Memeber',
+         
+      ),
+      'public'             =>true,
+      'menu_icon'          =>'dashicons-groups',
+      'supports'           =>array('title','editor','thumbnail'),
+   ));
+ }
+ add_action( 'init','san_team' );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /**
+ * Get the bootstrap!
+ * (Update path to use cmb2 or CMB2, depending on the name of the folder.
+ * Case-sensitive is important on some systems.)
+ */
+require_once __DIR__ . '/inc/cmb_metabox.php';
  
 
 
