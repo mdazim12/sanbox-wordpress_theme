@@ -19,7 +19,7 @@ function cmb2_sample_metaboxes() {
 	 */
 	$sab_team = new_cmb2_box( array(
 		'id'            => 'san_team',
-		'title'         => __( 'Team Field', 'cmb2' ),
+		'title'         => __( 'Team Field', 'san' ),
 		'object_types'  => 'san_team', 
 		'context'       => 'normal',
 		'priority'      => 'high',
@@ -141,11 +141,45 @@ function san_price_metabox() {
 		
 	) );
 
-	
+
+}
+
+
+
+///Testional Filds
+
+add_action( 'cmb2_admin_init', 'san_testi_fields' );
+/**
+ * Define the metabox and field configurations.
+ */
+function san_testi_fields() {
+
+	/**
+	 * Initiate the metabox
+	 */
+	$san_testi = new_cmb2_box( array(
+		'id'            => 'san_testi',
+		'title'         => __( 'Client Felids', 'san' ),
+		'object_types'  => 'san_testi', 
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, 
+		
+	) );
+
+	// TEAM ROLE field
+	$san_testi->add_field( array(
+		'name'       => __( 'Client Profession', 'san' ),
+		'desc'       => __( 'This fields for Client', 'san' ),
+		'id'         => 'san_testi_pro',
+		'type'       => 'text',
+		'show_on_cb' => 'cmb2_hide_if_no_cats', 
+	) );
 
 	
 
 }
+
 
 
 

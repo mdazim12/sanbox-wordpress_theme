@@ -543,16 +543,31 @@
         <div class="swiper-container dots-closer mb-6" data-margin="0" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
           <div class="swiper">
             <div class="swiper-wrapper">
+
+        <?php
+          $test_query = new WP_Query(array(
+            'post_type'     =>'san_testi',
+            'post_per_page' =>-1,
+            'post_order'    =>'ASC',
+          ));
+        ?>
+
+        <?php
+          if($test_query->have_posts(  )){
+            while($test_query->have_posts(  )) : $test_query->the_post(  ); 
+             $pro = get_post_meta( get_the_ID(),'san_testi_pro', true );
+            ?>
+
               <div class="swiper-slide">
                 <div class="item-inner">
                   <div class="card">
                     <div class="card-body">
                       <blockquote class="icon mb-0">
-                        <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”</p>
+                        <p><?php echo wp_trim_words(get_the_content(),10, ' ' );?></p>
                         <div class="blockquote-details">
-                          <img class="rounded-circle w-12" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/te1.jpg" srcset="./assets/img/avatars/te1@2x.jpg 2x" alt="" />
+                        <?php the_post_thumbnail('blog-thumb', array( 'class' => 'rounded-circle w-12' ));?>
                           <div class="info">
-                            <h5 class="mb-1">Coriss Ambady</h5>
+                            <h5 class="mb-1"><?php the_title();?></h5>
                             <p class="mb-0">Financial Analyst</p>
                           </div>
                         </div>
@@ -565,116 +580,24 @@
                 <!-- /.item-inner -->
               </div>
               <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <div class="card">
-                    <div class="card-body">
-                      <blockquote class="icon mb-0">
-                        <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”</p>
-                        <div class="blockquote-details">
-                          <img class="rounded-circle w-12" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/te2.jpg" srcset="./assets/img/avatars/te2@2x.jpg 2x" alt="" />
-                          <div class="info">
-                            <h5 class="mb-1">Cory Zamora</h5>
-                            <p class="mb-0">Marketing Specialist</p>
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.card -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <div class="card">
-                    <div class="card-body">
-                      <blockquote class="icon mb-0">
-                        <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”</p>
-                        <div class="blockquote-details">
-                          <img class="rounded-circle w-12" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/te3.jpg" srcset="./assets/img/avatars/te3@2x.jpg 2x" alt="" />
-                          <div class="info">
-                            <h5 class="mb-1">Nikolas Brooten</h5>
-                            <p class="mb-0">Sales Manager</p>
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.card -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <div class="card">
-                    <div class="card-body">
-                      <blockquote class="icon mb-0">
-                        <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”</p>
-                        <div class="blockquote-details">
-                          <img class="rounded-circle w-12" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/te4.jpg" srcset="./assets/img/avatars/te4@2x.jpg 2x" alt="" />
-                          <div class="info">
-                            <h5 class="mb-1">Coriss Ambady</h5>
-                            <p class="mb-0">Financial Analyst</p>
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.card -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <div class="card">
-                    <div class="card-body">
-                      <blockquote class="icon mb-0">
-                        <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”</p>
-                        <div class="blockquote-details">
-                          <img class="rounded-circle w-12" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/te5.jpg" srcset="./assets/img/avatars/te5@2x.jpg 2x" alt="" />
-                          <div class="info">
-                            <h5 class="mb-1">Jackie Sanders</h5>
-                            <p class="mb-0">Investment Planner</p>
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.card -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
-              <div class="swiper-slide">
-                <div class="item-inner">
-                  <div class="card">
-                    <div class="card-body">
-                      <blockquote class="icon mb-0">
-                        <p>“Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Vestibulum id ligula porta felis euismod semper. Cras justo odio dapibus facilisis sociis natoque penatibus.”</p>
-                        <div class="blockquote-details">
-                          <img class="rounded-circle w-12" src="<?php echo get_template_directory_uri();?>./assets/img/avatars/te6.jpg" srcset="./assets/img/avatars/te6@2x.jpg 2x" alt="" />
-                          <div class="info">
-                            <h5 class="mb-1">Laura Widerski</h5>
-                            <p class="mb-0">Sales Specialist</p>
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /.card -->
-                </div>
-                <!-- /.item-inner -->
-              </div>
-              <!--/.swiper-slide -->
+
+         <?php endwhile;
+          }
+        ?>
+
+
+
+             
+              
+              
+              
+
+
+              
+
+             
+
+
             </div>
             <!--/.swiper-wrapper -->
           </div>

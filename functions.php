@@ -156,6 +156,23 @@ function theme_support(){
   }
   add_action('init','san_price');
 
+  //Testimonial
+ function san_testi(){
+   register_post_type('san_testi',array(
+      'labels'    =>array(
+         'menu_name'       =>'Testimonial',
+         'name'            =>'Testimonail',
+         'add_new'         =>'Add New Client',
+         'add_items'       =>'All Clients',
+         'add_new_items'   =>'Add Clients'
+      ),
+      'public'       =>true,
+      'menu_icon'    =>'dashicons-testimonial',
+      'supports'     =>array('title','editor','thumbnail'),
+   ));
+ }
+ add_action('init','san_testi');
+
 
 
 
