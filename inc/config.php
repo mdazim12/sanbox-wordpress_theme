@@ -347,6 +347,7 @@ Redux::set_section(
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/header_section/header.php';
+require_once Redux_Core::$dir . '../sample/sections/header_section/hero.php';
 
 
 

@@ -1,5 +1,5 @@
 <?php get_header(  );?>
-
+<?php Global $sanbox;?>
 
 
 
@@ -10,16 +10,17 @@
     <div class="container pt-10 pb-15 pt-md-14 pb-md-20">
       <div class="row gx-lg-8 gx-xl-12 gy-10 mb-5 align-items-center">
         <div class="col-md-10 offset-md-1 offset-lg-0 col-lg-5 text-center text-lg-start order-2 order-lg-0" data-cues="slideInDown" data-group="page-title" data-delay="600">
-          <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0">Creative. Smart. Awesome.</h1>
-          <p class="lead fs-lg mb-7">We specialize in web, mobile and identity design. We love to turn ideas into beautiful things.</p>
+          <h1 class="display-1 mb-5 mx-md-n5 mx-lg-0"><?php echo $sanbox ['hero_title'];?></h1>
+          <p class="lead fs-lg mb-7"> <?php echo $sanbox ['hero_subtitle'];?></p>
           <div class="d-flex justify-content-center justify-content-lg-start" data-cues="slideInDown" data-group="page-title-buttons" data-delay="900">
-            <span><a class="btn btn-primary rounded me-2">See Projects</a></span>
-            <span><a class="btn btn-yellow rounded">Learn More</a></span>
+            <span><a href="<?php echo esc_url( $sanbox['hero_btn_one_link'] );?>"class="btn btn-primary rounded me-2"><?php echo $sanbox['hero_btn_one'];?></a></span>
+            <span><a href="<?php echo esc_url( $sanbox['hero_btn_two_link'] );?>" class="btn btn-yellow rounded">Learn More</a></span>
           </div>
         </div>
+        
         <!-- /column -->
         <div class="col-lg-7" data-cue="slideInDown">
-        <figure><img class="w-auto" src="<?php echo get_template_directory_uri();?>. /assets/img/illustrations/i6.png" srcset="<?php echo get_template_directory_uri();?> /assets/img/illustrations/i6.png 2x" alt="" /></figure>
+        <figure><img class="w-auto" src=" <?php echo $sanbox ['hero_img']['url'];?>" alt="" /></figure>
         </div>
         <!-- /column -->
       </div>

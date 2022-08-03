@@ -21,7 +21,7 @@
         <div
             class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
             <div class="navbar-brand w-100">
-                <a href="./index.html">
+                <a href="<?php echo esc_url(home_url() );?>">
                     <img src="<?php echo $sanbox ['header_logo']['url'];?>" alt="" />
                 </a>
             </div>
@@ -45,19 +45,7 @@
                     ) );
                 ?>
                   
-                   
-                    <div class="d-lg-none mt-auto pt-6 pb-6 order-4">
-                        <a href="mailto:first.last@email.com" class="link-inverse">info@email.com</a>
-                        <br /> 00 (123) 456 78 90 <br />
-                        <nav class="nav social social-white mt-4">
-                            <a href="#"><i class="uil uil-twitter"></i></a>
-                            <a href="#"><i class="uil uil-facebook-f"></i></a>
-                            <a href="#"><i class="uil uil-dribbble"></i></a>
-                            <a href="#"><i class="uil uil-instagram"></i></a>
-                            <a href="#"><i class="uil uil-youtube"></i></a>
-                        </nav>
-                        
-                    </div>
+                  
                     
                 </div>
                 
@@ -65,26 +53,7 @@
 
 
             <!-- /.navbar-collapse -->
-            <div class="navbar-other w-100 d-flex ms-auto">
-                <ul class="navbar-nav flex-row align-items-center ms-auto">
-                    <li class="nav-item dropdown language-select text-uppercase">
-                        <a class="nav-link dropdown-item dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">En</a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a class="dropdown-item" href="#">En</a></li>
-                            <li class="nav-item"><a class="dropdown-item" href="#">De</a></li>
-                            <li class="nav-item"><a class="dropdown-item" href="#">Es</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item d-none d-md-block">
-                        <a href="./contact.html" class="btn btn-sm btn-primary rounded-pill">Contact</a>
-                    </li>
-                    <li class="nav-item d-lg-none">
-                        <button class="hamburger offcanvas-nav-btn"><span></span></button>
-                    </li>
-                </ul>
-                <!-- /.navbar-nav -->
-            </div>
+            
             <!-- /.navbar-other -->
         </div>
         <!-- /.navbar-collapse-wrapper -->

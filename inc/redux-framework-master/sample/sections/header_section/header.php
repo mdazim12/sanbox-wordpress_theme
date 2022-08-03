@@ -21,7 +21,7 @@ Redux::set_section(
 				'type'     => 'media',
                 'url'      => true,
 				'title'    => esc_html__( 'logo', 'sanbox' ),
-				'subtitle' => esc_html__( 'Upload your website logo', 'your-textdomain-here' ),
+				'subtitle' => esc_html__( 'Upload your website logo', 'sanbox' ),
 				'default'  => array(
                     'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
                 ),
