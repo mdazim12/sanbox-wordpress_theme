@@ -194,6 +194,10 @@ function theme_support(){
  * Case-sensitive is important on some systems.)
  */
 require_once __DIR__ . '/inc/cmb_metabox.php';
+require_once __DIR__ . '/inc/redux-framework-master/redux-framework.php';
+require_once __DIR__ . '/inc/config.php';
+
+
  
 
 

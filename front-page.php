@@ -471,14 +471,16 @@
     <?php
       if($FAQ_query->have_posts(  )){
         while($FAQ_query->have_posts(  )) : $FAQ_query->the_post(  ); ?>
+
       <div class="col-lg-6 mb-0">
-        <div id="accordion-<?php $i =1; $i++; echo $i;?>" class="accordion-wrapper">
+
+        <div id="accordion-<?php $a = 1;while ($a <= 1) {echo $a++;}?>" class="accordion-wrapper">
           <div class="card accordion-item">
-            <div class="card-header" id="accordion-heading-1-<?php $i =1; $i++; echo $i;?>">
-              <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-1" aria-expanded="false" aria-controls="accordion-collapse-1-1 ?>"><?php the_title( );?></button>
+            <div class="card-header" id="accordion-heading-1-<?php $a = 1;while ($a <= 1) {echo $a++;}?>">
+              <button class="collapsed" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1-<?php $a = 1;while ($a <= 1) {echo $a++;}?>" aria-expanded="false" aria-controls="accordion-collapse-1-<?php $a = 1;while ($a <= 1) {echo $a++;}?>?>"><?php the_title( );?></button>
             </div>
             <!-- /.card-header -->
-            <div id="accordion-collapse-1-<?php $i =1; $i++; echo $i;?>" class="collapse" aria-labelledby="accordion-heading-1-<?php $i =1; $i++; echo $i;?>" data-bs-target="#accordion1-<?php $i =1; $i++; echo $i;?>">
+            <div id="accordion-collapse-1-<?php $a = 1;while ($a <= 1) {echo $a++;}?>" class="collapse" aria-labelledby="accordion-heading-1-<?php $a = 1;while ($a <= 1) {echo $a++;}?>" data-bs-target="#accordion1-<?php $a = 1;while ($a <= 1) {echo $a++;}?>">
               <div class="card-body">
                 <p><?php the_content(  );?></p>
               </div>
@@ -488,7 +490,10 @@
           </div>
         </div>
         <!-- /.accordion-wrapper -->
+        
       </div>
+
+
      <?php endwhile;
       }
     ?>
@@ -514,11 +519,11 @@
         </div>
         <!-- /
 
+       <?php $a = 1;while ($a <= 1) {echo $a++;}?>
       
 
 
-
-      <!--/column -->
+      <--/column -->
     </div>
     <!--/.row -->
   </div>
@@ -568,7 +573,7 @@
                         <?php the_post_thumbnail('blog-thumb', array( 'class' => 'rounded-circle w-12' ));?>
                           <div class="info">
                             <h5 class="mb-1"><?php the_title();?></h5>
-                            <p class="mb-0">Financial Analyst</p>
+                            <p class="mb-0"><?php echo $pro;?></p>
                           </div>
                         </div>
                       </blockquote>
@@ -585,17 +590,6 @@
           }
         ?>
 
-
-
-             
-              
-              
-              
-
-
-              
-
-             
 
 
             </div>
@@ -643,7 +637,7 @@
                       <div class="card-body">
                         <div class="post-header">
                           <div class="post-category text-line">
-                            <a href="#" class="hover" rel="category"><?php the_category(" " );?></a>
+                            <a href="#" class="hover" rel="category"><?php the_category(" , ");?></a>
                           </div>
                           <!-- /.post-category -->
                           <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="<?php the_permalink(  );?>"><?php the_title(  );?></a></h2>

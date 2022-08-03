@@ -61,6 +61,15 @@ with others.
     padding: 0 1.5rem 0 1.5rem;
     margin-top: 0px!important;
 }
+ul .list-unstyled a{
+	color: #343f52;
+    font-weight: bold;
+    font-size: .7rem;
+    border-radius: .4rem;
+    background-color: rgba(164,174,198,.2);
+    padding: .4rem 1rem;
+    line-height: 1.7;
+}
 
 
 

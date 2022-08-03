@@ -1,3 +1,5 @@
+<?php Global $sanbox;?>
+
 <!DOCTYPE html>
 <html lang="<?php language_attributes();?>">
 
@@ -20,7 +22,7 @@
             class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
             <div class="navbar-brand w-100">
                 <a href="./index.html">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/logo.png;" srcset="./assets/img/logo@2x.png 2x" alt="" />
+                    <img src="<?php echo $sanbox ['header_logo']['url'];?>" alt="" />
                 </a>
             </div>
            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">

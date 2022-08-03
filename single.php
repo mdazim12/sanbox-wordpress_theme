@@ -9,15 +9,14 @@
           <div class="col-md-10 col-xl-8 mx-auto">
             <div class="post-header">
               <div class="post-category text-line text-white">
-                <a href="<?php the_permalink();?>" class="text-reset" rel="category"><?php the_category( " ");?></a>
+                <a href="<?php the_permalink();?>" class="text-reset" rel="category"><?php the_category( ' ', ' ',);?></a>
               </div>
               <!-- /.post-category -->
               <h1 class="display-1 mb-4 text-white"><?php wp_title(" ");?></h1>
               <ul class="post-meta text-white">
-                <li class="post-date"><i class="uil uil-calendar-alt"></i><span> <?php the_date('d-M-y')?> </span></li>
+                <li class="post-date"><i class="uil uil-calendar-alt"></i><span> <?php the_date( ); the_time( ); ?> </span></li>
                 <li class="post-author"><i class="uil uil-user"></i><a href="<?php the_permalink( );?>" class="text-reset"><span> <?php the_author( );?> </span></a></li>
-                <li class="post-comments"><i class="uil uil-comment"></i><a href="#" class="text-reset">3<span> Comments</span></a></li>
-                <li class="post-likes"><i class="uil uil-heart-alt"></i><a href="#" class="text-reset">3<span> Likes</span></a></li>
+                <li class="post-comments"><i class="uil uil-comment"></i><a href="#" class="text-reset"><?php comments_number( );?><span> </span></a></li>
               </ul>
               <!-- /.post-meta -->
             </div>
@@ -44,11 +43,13 @@
                         <h2 class="h1 mb-4"><?php the_title(  );;?></h2>
                         <p><?php the_content(  );?></p>
                         
+                        
                       </div>
                       <!-- /.post-content -->
                       <div class="post-footer d-md-flex flex-md-row justify-content-md-between align-items-center mt-8">
                         <div>
                           <ul class="list-unstyled tag-list mb-0">
+                            <?php the_tags(" " ," ");?>
                             <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Still Life</a></li>
                             <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Urban</a></li>
                             <li><a href="#" class="btn btn-soft-ash btn-sm rounded-pill mb-0">Nature</a></li>
