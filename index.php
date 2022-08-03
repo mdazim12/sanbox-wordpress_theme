@@ -48,7 +48,7 @@
                         <h2 class="post-title h3 mt-1 mb-3"><a class="link-dark" href="<?php the_permalink(  );?>"> <?php the_title( );?> </a></h2>
                       </div>
                       <div class="post-content">
-                        <p><?php the_content( );?> </p>
+                        <p> <?php echo wp_trim_words( get_the_content( ), 20, ' ');?> </p>
                       </div>
                       <!-- /.post-content -->
                     </div>

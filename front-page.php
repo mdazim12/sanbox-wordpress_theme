@@ -77,16 +77,16 @@
     <div class="container py-14 py-md-16">
       <div class="row gx-md-8 gy-10 align-items-center">
         <div class="col-lg-6 offset-lg-1 order-lg-2 position-relative">
-          <figure class="rounded"><img class="img-fluid" src="<?php echo get_template_directory_uri();?>./assets/img/photos/about27.jpg" srcset="./assets/img/photos/about27@2x.jpg 2x" alt="" /></figure>
+          <figure class="rounded"><img class="img-fluid" src="<?php echo $sanbox['about_img']['url'];?>" alt="" /></figure>
           <div class="card shadow-lg position-absolute d-none d-md-block" style="top: 15%; left: -7%">
             <div class="card-body py-4 px-5">
               <div class="d-flex flex-row align-items-center">
                 <div>
-                  <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/solid/cloud-group.svg" class="svg-inject icon-svg icon-svg-sm solid-duo text-grape-fuchsia me-3" alt="" />
+                  <img class="icon_class"src="<?php echo $sanbox ['ab_client_icon']['url'];?>" alt="" />
                   
                 </div>
                 <div>
-                  <h3 class="fs-25 counter mb-0 text-nowrap">25000+</h3>
+                  <h3 class="fs-25 counter mb-0 text-nowrap"><?php echo $sanbox ['ab_client'];?></h3>
                   <p class="fs-16 lh-sm mb-0 text-nowrap">Happy Clients</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@
           <!--/.card -->
           <div class="card shadow-lg position-absolute text-center d-none d-md-block" style="bottom: 10%; left: -10%;">
             <div class="card-body p-6">
-              <div class="progressbar semi-circle fuchsia mb-3" data-value="80"></div>
+              <div class="progressbar semi-circle fuchsia mb-3" data-value="<?php echo $sanbox ['ab_time'];?>"></div>
               <h4 class="mb-0">Time Saved</h4>
             </div>
             <!--/.card-body -->
@@ -105,14 +105,9 @@
         </div>
         <!--/column -->
         <div class="col-lg-5">
-          <h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3">What Makes Us Different?</h2>
-          <h3 class="display-4 mb-4 me-lg-n5">We make spending stress free so you have the perfect control.</h3>
-          <p class="mb-6">Etiam porta sem malesuada magna mollis euismod. Donec ullamcorper nulla non metus auctor fringilla. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Fusce dapibus, tellus ac cursus. Integer posuere erat a ante venenatis dapibus posuere velit.</p>
-          <ul class="icon-list bullet-bg bullet-soft-primary">
-            <li><i class="uil uil-check"></i>Aenean eu leo quam. Pellentesque ornare.</li>
-            <li><i class="uil uil-check"></i>Nullam quis risus eget urna mollis ornare.</li>
-            <li><i class="uil uil-check"></i>Donec id elit non mi porta gravida at eget.</li>
-          </ul>
+          <h2 class="fs-16 text-uppercase text-gradient gradient-1 mb-3"><?php echo $sanbox['ab_mini_title'];?></h2>
+          <h3 class="display-4 mb-4 me-lg-n5"><?php echo $sanbox ['ab_title'];?></h3>
+          <p class="mb-6"><?php echo $sanbox ['ab_des'];?></p>
         </div>
         <!--/column -->
       </div>
@@ -133,9 +128,9 @@
     <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 gy-lg-0">
         <div class="col-lg-4 mt-lg-2">
-          <h2 class="fs-15 text-uppercase text-muted mb-3">Our Clients</h2>
-          <h3 class="display-4 mb-3 pe-xxl-5">Trusted by over 300+ clients</h3>
-          <p class="lead fs-lg mb-0 pe-xxl-5">We bring solutions to make life easier for our customers.</p>
+          <h2 class="fs-15 text-uppercase text-muted mb-3"> <?php echo $sanbox ['Client_mini_title'];?> </h2>
+          <h3 class="display-4 mb-3 pe-xxl-5"> <?php echo $sanbox ['Client_title'];?> </h3>
+          <p class="lead fs-lg mb-0 pe-xxl-5"> <?php echo $sanbox ['Client_des'];?></p>
         </div>
         <!-- /column -->
         <div class="col-lg-8">
@@ -186,39 +181,37 @@
     <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
         <div class="col-lg-7">
-          <figure><img class="w-auto" src="<?php echo get_template_directory_uri();?>./assets/img/illustrations/i3.png" srcset="./assets/img/illustrations/i3@2x.png 2x" alt="" /></figure>
+          <figure><img class="w-auto" src="<?php echo $sanbox ['feature_img']['url'];?>"  alt="" /></figure>
         </div>
         <!--/column -->
         <div class="col-lg-5">
-          <h2 class="fs-15 text-uppercase text-line text-primary mb-3">How It Works?</h2>
-          <h3 class="display-5 mb-7 pe-xxl-5">Everything you need on creating a business process.</h3>
+          <h2 class="fs-15 text-uppercase text-line text-primary mb-3"><?php echo $sanbox ['feature_mini_title'];?></h2>
+          <h3 class="display-5 mb-7 pe-xxl-5"><?php echo $sanbox ['feature_title'];?></h3>
           <div class="d-flex flex-row mb-4">
-            <div>
-              <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/lineal/light-bulb.svg" class="svg-inject icon-svg icon-svg-sm text-primary me-4" alt="" />
+
+          <?php
+          
+          $slider_servces_img = $sanbox ['feature_sliders'];
+          ?>
+         
+          <?php
+            foreach ($slider_servces_img as $value) { ?>
+               <div>
+              <img src="<?php echo $value['image'];?>" alt="" />
             </div>
             <div>
-              <h4 class="mb-1">Collect Ideas</h4>
-              <p class="mb-1">Nulla vitae elit libero pharetra augue dapibus.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-row mb-4">
-            <div>
-              <img src="./assets/img/icons/lineal/pie-chart-2.svg" class="svg-inject icon-svg icon-svg-sm text-green me-4" alt="" />
-            </div>
-            <div>
-              <h4 class="mb-1">Data Analysis</h4>
-              <p class="mb-1">Vivamus sagittis lacus augue laoreet vel.</p>
-            </div>
-          </div>
-          <div class="d-flex flex-row">
-            <div>
-              <img src="<?php echo get_template_directory_uri();?>./assets/img/icons/lineal/design.svg" class="svg-inject icon-svg icon-svg-sm text-yellow me-4" alt="" />
-            </div>
-            <div>
-              <h4 class="mb-1">Magic Touch</h4>
-              <p class="mb-0">Cras mattis consectetur purus sit amet.</p>
+              <h4 class="mb-1"><?php echo $value['title']; ?></h4>
+              <p class="mb-1"> <?php echo $value['description']; ?> </p>
             </div>
           </div>
+           <?php 
+            }
+            
+          ?>
+
+           
+          
+         
         </div>
         <!--/column -->
       </div>
@@ -622,10 +615,17 @@
         <div class="swiper-container dots-closer blog grid-view mb-6" data-margin="0" data-dots="true" data-items-xl="3" data-items-md="2" data-items-xs="1">
           <div class="swiper">
             <div class="swiper-wrapper">
+        <?php
+        $query_blog = new WP_Query(array(
+          'post_type'   =>'POST',
+          'post_per_page'=>-1,
+          'order'         =>'ASC',
+        ));
         
+        ?>
         <?php 
-          if(have_posts(  )){
-            while(have_posts(  )) : the_post(  ); ?>
+          if( $query_blog->have_posts(  )){
+            while( $query_blog->have_posts(  )) :  $query_blog->the_post(  ); ?>
                 <div class="swiper-slide">
                 <div class="item-inner">
                   <article>

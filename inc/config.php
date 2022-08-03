@@ -314,25 +314,6 @@ Redux::set_help_sidebar( $opt_name, $content );
  * ---> START SECTIONS
  */
 
-// -> START Basic Fields
-Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'Basic Fields', 'your-textdomain-here' ),
-		'id'               => 'basic',
-		'desc'             => esc_html__( 'These are really basic fields!', 'your-textdomain-here' ),
-		'customizer_width' => '400px',
-		'icon'             => 'el el-home',
-	)
-);
-
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/radio.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/sortable.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/text.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/multi-text.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/password.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/textarea.php';
 
 
 // -> START Header section Fields
@@ -348,6 +329,48 @@ Redux::set_section(
 );
 require_once Redux_Core::$dir . '../sample/sections/header_section/header.php';
 require_once Redux_Core::$dir . '../sample/sections/header_section/hero.php';
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'About Section', 'sanbox' ),
+		'id'               => 'about',
+		'desc'             => esc_html__( 'This section only for about', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/about_section/about.php';
+require_once Redux_Core::$dir . '../sample/sections/about_section/about_img.php';
+
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Clients Section', 'sanbox' ),
+		'id'               => 'client',
+		'desc'             => esc_html__( 'This section only for Client', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/client_section/client.php';
+
+
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Feature Section', 'sanbox' ),
+		'id'               => 'feature',
+		'desc'             => esc_html__( 'This section only for feature', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/feature_section/feature.php';
+require_once Redux_Core::$dir . '../sample/sections/feature_section/feature_img.php';
+
 
 
 

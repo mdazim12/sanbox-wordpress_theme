@@ -149,21 +149,9 @@ if ( ! class_exists( 'Redux_Slides', false ) ) {
 						echo '</li>';
 					}
 
-					$placeholder = ( isset( $this->field['placeholder']['url'] ) ) ? esc_attr( $this->field['placeholder']['url'] ) : __( 'URL', 'redux-framework' );
-					if ( $this->field['show']['url'] ) {
-						$url_type = 'text';
-					} else {
-						$url_type = 'hidden';
-					}
+					
 
-					echo '<li>';
-					echo '<input
-							type="' . esc_attr( $url_type ) . '"
-							id="' . esc_attr( $this->field['id'] . '-url_' ) . esc_attr( $x ) . '"
-							name="' . esc_attr( $this->field['name'] . '[' . esc_attr( $x ) . '][url]' . $this->field['name_suffix'] ) . '"
-							value="' . esc_attr( $slide['url'] ) . '"
-							class="full-text" placeholder="' . esc_attr( $placeholder ) . '" />';
-					echo '</li>';
+					
 
 					echo '<li>';
 					echo '<input
@@ -285,13 +273,7 @@ if ( ! class_exists( 'Redux_Slides', false ) ) {
 					echo '</li>';
 				}
 
-				$placeholder = ( isset( $this->field['placeholder']['url'] ) ) ? esc_attr( $this->field['placeholder']['url'] ) : __( 'URL', 'redux-framework' );
-
-				if ( $this->field['show']['url'] ) {
-					$url_type = 'text';
-				} else {
-					$url_type = 'hidden';
-				}
+				
 
 				echo '<li>';
 				echo '<input
