@@ -372,6 +372,73 @@ require_once Redux_Core::$dir . '../sample/sections/feature_section/feature.php'
 require_once Redux_Core::$dir . '../sample/sections/feature_section/feature_img.php';
 
 
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Team Section', 'sanbox' ),
+		'id'               => 'team',
+		'desc'             => esc_html__( 'This section only for team', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/team_section/team.php';
+
+
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Project Section', 'sanbox' ),
+		'id'               => 'prooject',
+		'desc'             => esc_html__( 'This section only for Project', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/project_section/project.php';
+
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Price  Section', 'sanbox' ),
+		'id'               => 'price',
+		'desc'             => esc_html__( 'This section only for Price Section', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/price_section/price.php';
+
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Testimonail  Section', 'sanbox' ),
+		'id'               => 'testi_mo',
+		'desc'             => esc_html__( 'This section only for testimonial Section', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/testimonial_section/testimonial.php';
+
+
+
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Blog  Section', 'sanbox' ),
+		'id'               => 'blog_mo',
+		'desc'             => esc_html__( 'This section only for blo Section', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/blog_section/blog.php';
+
+
 
 
 

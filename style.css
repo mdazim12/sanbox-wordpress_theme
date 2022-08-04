@@ -70,9 +70,16 @@ ul .list-unstyled a{
     padding: .4rem 1rem;
     line-height: 1.7;
 }
-.icon_class{
+.feature_icon_box {
+    width: 70px;
+}
+img.feature_icon{
 	width: 50px!important;
 }
+.azim_bc{
+	background-color: red;
+}
+
 
 
 

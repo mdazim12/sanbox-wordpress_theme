@@ -187,8 +187,7 @@
         <div class="col-lg-5">
           <h2 class="fs-15 text-uppercase text-line text-primary mb-3"><?php echo $sanbox ['feature_mini_title'];?></h2>
           <h3 class="display-5 mb-7 pe-xxl-5"><?php echo $sanbox ['feature_title'];?></h3>
-          <div class="d-flex flex-row mb-4">
-
+         
           <?php
           
           $slider_servces_img = $sanbox ['feature_sliders'];
@@ -196,23 +195,29 @@
          
           <?php
             foreach ($slider_servces_img as $value) { ?>
-               <div>
-              <img src="<?php echo $value['image'];?>" alt="" />
-            </div>
-            <div>
-              <h4 class="mb-1"><?php echo $value['title']; ?></h4>
-              <p class="mb-1"> <?php echo $value['description']; ?> </p>
-            </div>
-          </div>
+                <div class="d-flex flex-row mb-4">
+
+                  <div class="feature_icon_box">
+                      <img class="feature_icon" src="<?php echo $value['image'];?>" alt="" />
+                  </div>
+
+                  <div>
+                    <h4 class="mb-1"><?php echo $value['title']; ?></h4>
+                    <p class="mb-1"> <?php echo $value['description']; ?> </p>
+                  </div>
+
+                </div>
+            
            <?php 
             }
             
           ?>
+          
 
            
           
          
-        </div>
+       
         <!--/column -->
       </div>
       <!--/.row -->
@@ -227,10 +232,10 @@
     <div class="container py-14 py-md-16">
       <div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
         <div class="col-lg-4">
-          <h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3">Meet the Team</h2>
-          <h3 class="display-5 mb-5">Save your time and money by choosing our professional team.</h3>
-          <p>Donec id elit non mi porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros tempus porttitor.</p>
-          <a href="#" class="btn btn-primary rounded-pill mt-3">See All Members</a>
+          <h2 class="fs-15 text-uppercase text-line text-primary text-center mb-3"> <?php echo $sanbox ['team_mini_title'];?> </h2>
+          <h3 class="display-5 mb-5"> <?php echo $sanbox ['team_title'];?></h3>
+          <p><?php echo $sanbox ['team_des'];?></p>
+          <a href="<?php echo esc_url( $sanbox ['team_btn_link'] );?>" class="btn btn-primary rounded-pill mt-3"> <?php echo $sanbox ['team_btn'];?> </a>
         </div>
         <!--/column -->
         <div class="col-lg-8">
@@ -302,8 +307,8 @@
     <div class="container py-14 py-md-16">
       <div class="row">
         <div class="col-lg-11 col-xl-10 mx-auto mb-10">
-          <h2 class="fs-16 text-uppercase text-muted text-center mb-3">Our Projects</h2>
-          <h3 class="display-3 text-center px-lg-5 px-xl-10 px-xxl-16 mb-0">Check out some of our awesome projects with creative ideas and great design.</h3>
+          <h2 class="fs-16 text-uppercase text-muted text-center mb-3"> <?php echo $sanbox ['project_mini_title'];?> </h2>
+          <h3 class="display-3 text-center px-lg-5 px-xl-10 px-xxl-16 mb-0"><?php echo $sanbox ['project_title'];?></h3>
         </div>
         <!-- /column -->
       </div>
@@ -357,7 +362,7 @@
       </div>
       <!-- /.grid -->
       <div class="text-center mt-10">
-        <a href="#" class="btn btn-lg btn-primary rounded-pill">Start a Project</a>
+        <a href="<?php echo esc_url($sanbox ['project_btn_link'] );?>" class="btn btn-lg btn-primary rounded-pill"> <?php echo $sanbox['project_btn'];?> </a>
       </div>
     </div>
     <!-- /.container -->
@@ -368,16 +373,16 @@
 
   <section class="wrapper bg-light">
     <div class="container py-14 py-md-16">
-      <h2 class="display-5 mb-7 text-center">Our Pricing</h2>
+      <h2 class="display-5 mb-7 text-center"><?php echo $sanbox ['price_title'];?></h2>
       <div class="pricing-wrapper">
         <div class="pricing-switcher-wrapper switcher">
-          <p class="mb-0 pe-3">Monthly</p>
+          <p class="mb-0 pe-3"><?php echo $sanbox ['price_month'];?></p>
           <div class="pricing-switchers">
             <div class="pricing-switcher pricing-switcher-active"></div>
             <div class="pricing-switcher"></div>
             <div class="switcher-button bg-primary"></div>
           </div>
-          <p class="mb-0 ps-3">Yearly <span class="text-red">(Save 30%)</span></p>
+          <p class="mb-0 ps-3"><?php echo $sanbox ['price_year'];?> <span class="text-red"> (<?php echo $sanbox['pricet_year_save'];?>)</span></p>
         </div>
         <div class="row gx-0 gy-6 mt-2">
 
@@ -419,7 +424,7 @@
                   <li><i class="uil uil-times bullet-soft-red"></i><span> Weekly <strong>Reports</strong> </span></li>
                   <li><i class="uil uil-times bullet-soft-red"></i><span> <?php echo $san_price_num_supports;?> <strong>Support</strong></span></li>
                 </ul>
-                <a href="#" class="btn btn-soft-primary rounded-pill">Choose Plan</a>
+                <a href="#" class="btn btn-soft-primary rounded-pill"> <?php echo $sanbox['pricet_pack_order'];?> </a>
               </div>
               <!--/.card-body -->
             </div>
@@ -534,8 +539,8 @@
 
   <section class="wrapper bg-light">
     <div class="container py-14 py-md-16">
-      <h2 class="display-4 mb-3 text-center">Happy Customers</h2>
-      <p class="lead text-center mb-6 px-md-16 px-lg-0">Customer satisfaction is our major goal. See what our customers are saying about us.</p>
+      <h2 class="display-4 mb-3 text-center"> <?php echo $sanbox ['testi_title'];?> </h2>
+      <p class="lead text-center mb-6 px-md-16 px-lg-0"><?php echo $sanbox['testi_des'];?></p>
       <div class="position-relative">
         <div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="bottom: 0.5rem; right: -1.7rem;"></div>
         <div class="shape bg-dot primary rellax w-16 h-16" data-rellax-speed="1" style="top: -1rem; left: -1.7rem;"></div>
@@ -604,8 +609,8 @@
     <div class="container py-14 py-md-16">
       <div class="row">
         <div class="col-lg-9 col-xl-8 col-xxl-7 mx-auto">
-          <h2 class="fs-15 text-uppercase text-primary text-center">Our News</h2>
-          <h3 class="display-4 mb-6 text-center">Here are the latest company news from our blog that got the most attention.</h3>
+          <h2 class="fs-15 text-uppercase text-primary text-center"><?php echo $sanbox['blog_mini_title'];?></h2>
+          <h3 class="display-4 mb-6 text-center"><?php echo $sanbox ['blog_des'];?></h3>
         </div>
         <!-- /column -->
       </div>
