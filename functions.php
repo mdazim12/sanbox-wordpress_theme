@@ -15,6 +15,7 @@ function theme_support(){
   wp_enqueue_style( 'pre_load',get_template_directory_uri().'/assets/css/fonts/thicccboi.css' ); 
   wp_enqueue_style( 'main_css',get_template_directory_uri().'/assets/css/style.css' ); 
   wp_enqueue_style( 'yellow_css',get_template_directory_uri().'/assets/css/colors/yellow.css' ); 
+  wp_enqueue_style( '404_css',get_template_directory_uri().'/assets/css/erro404.css' ); 
   wp_enqueue_style( 'style',get_stylesheet_uri() ); 
 
 
