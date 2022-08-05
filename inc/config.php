@@ -439,6 +439,19 @@ Redux::set_section(
 require_once Redux_Core::$dir . '../sample/sections/blog_section/blog.php';
 
 
+Redux::set_section(
+	$opt_name,
+	array(
+		'title'            => esc_html__( 'Comunity Section', 'sanbox' ),
+		'id'               => 'commu',
+		'desc'             => esc_html__( 'This section only for comunity Section', 'sanbox' ),
+		'customizer_width' => '400px',
+		'icon'             => 'el el-align-justify',
+	)
+);
+require_once Redux_Core::$dir . '../sample/sections/comunity_section/comunity.php';
+
+
 
 
 
