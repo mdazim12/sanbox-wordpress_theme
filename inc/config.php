@@ -351,7 +351,7 @@ Redux::set_section(
 		'id'               => 'client',
 		'desc'             => esc_html__( 'This section only for Client', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-braille',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/client_section/client.php';
@@ -365,7 +365,7 @@ Redux::set_section(
 		'id'               => 'feature',
 		'desc'             => esc_html__( 'This section only for feature', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-signal',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/feature_section/feature.php';
@@ -379,7 +379,7 @@ Redux::set_section(
 		'id'               => 'team',
 		'desc'             => esc_html__( 'This section only for team', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-group-alt',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/team_section/team.php';
@@ -393,7 +393,7 @@ Redux::set_section(
 		'id'               => 'prooject',
 		'desc'             => esc_html__( 'This section only for Project', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-cloud',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/project_section/project.php';
@@ -406,7 +406,7 @@ Redux::set_section(
 		'id'               => 'price',
 		'desc'             => esc_html__( 'This section only for Price Section', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-usd',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/price_section/price.php';
@@ -419,7 +419,7 @@ Redux::set_section(
 		'id'               => 'testi_mo',
 		'desc'             => esc_html__( 'This section only for testimonial Section', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-comment',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/testimonial_section/testimonial.php';
@@ -433,7 +433,7 @@ Redux::set_section(
 		'id'               => 'blog_mo',
 		'desc'             => esc_html__( 'This section only for blo Section', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-book',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/blog_section/blog.php';
@@ -446,7 +446,7 @@ Redux::set_section(
 		'id'               => 'commu',
 		'desc'             => esc_html__( 'This section only for comunity Section', 'sanbox' ),
 		'customizer_width' => '400px',
-		'icon'             => 'el el-align-justify',
+		'icon'             => 'el el-quote-alt',
 	)
 );
 require_once Redux_Core::$dir . '../sample/sections/comunity_section/comunity.php';
