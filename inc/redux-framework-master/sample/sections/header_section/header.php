@@ -25,7 +25,16 @@ Redux::set_section(
 				'default'  => array(
                     'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
                 ),
+
 			),
+			array(
+				'id'       => 'opt-switch',
+				'type'     => 'switch', 
+				'title'    => __('Display logo', 'sanbox'),
+				'subtitle' => __('Look, it\'s on!', 'sanbox'),
+				'default'  => true,
+			),
+			
 			
 			
 			

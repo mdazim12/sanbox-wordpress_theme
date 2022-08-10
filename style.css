@@ -79,3 +79,93 @@ img.feature_icon{
 .azim_bc{
 	background-color: red;
 }
+#comment,input#author,input#email,input#url {
+	
+	display: block;
+    width: 100%;
+    padding: .6rem 1rem;
+    font-size: .75rem;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #60697b;
+    background-color: #fefefe;
+    background-clip: padding-box;
+    border: 1px solid rgba(8,60,130,.07);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .4rem;
+    box-shadow: 0 0 1.25rem rgb(30 34 40 / 4%);
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+input#submit{
+	color: #fff!important;
+    background-color: #3f78e0!important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1.7;
+    letter-spacing: -.01rem;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    transform: translateY(0);
+    padding: .5rem 1.2rem;
+    font-size: .8rem;
+    border-radius: .4rem;
+    transition: all .2s ease-in-out;
+}
+input#submit:hover{
+	transform: translateY(-.15rem);
+    box-shadow: 0 0.25rem 0.75rem rgb(30 34 40 / 15%);
+    color: #fff;
+}
+ul.tag-list a{
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    line-height: 1.7;
+    letter-spacing: -.01rem;
+    color: #9499a3;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #eeeff0;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    transform: translateY(0);
+    padding: .5rem 1.2rem;
+    font-size: .8rem;
+    border-radius: .4rem;
+    transition: all .2s ease-in-out;
+	border-radius: 50rem!important;
+	padding: .4rem 1rem;
+    font-size: .7rem;
+    border-radius: .4rem
+
+	
+} 
+.list-unstyled a:hover{
+	transform: translateY(-.15rem);
+    color: rgb(34, 33, 33);
+}
+#share_btn{
+	width: 100%;
+}
+

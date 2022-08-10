@@ -20,11 +20,16 @@
     <div class="container">
         <div
             class="navbar-collapse-wrapper bg-white d-flex flex-row flex-nowrap w-100 justify-content-between align-items-center">
+            
+        <?php if ( $sanbox ['opt-switch'] == '1' ){ ?>
             <div class="navbar-brand w-100">
                 <a href="<?php echo esc_url(home_url() );?>">
                     <img src="<?php echo $sanbox ['header_logo']['url'];?>" alt="" />
                 </a>
             </div>
+        <?php }?>    
+        
+            
            <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
                 <div class="offcanvas-header d-lg-none">
                     <a href="./index.html"><img src="./assets/img/logo-light.png"
