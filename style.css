@@ -130,7 +130,7 @@ input#submit:hover{
     box-shadow: 0 0.25rem 0.75rem rgb(30 34 40 / 15%);
     color: #fff;
 }
-ul.tag-list a{
+ul.tag-list a {
 	display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -168,4 +168,52 @@ ul.tag-list a{
 #share_btn{
 	width: 100%;
 }
+a.tag-cloud-link{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700!important;
+    line-height: 1.7;
+    letter-spacing: -.01rem;
+    color: #9499a3;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #eeeff0;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+    transform: translateY(0);
+    padding: .5rem 1.2rem;
+    font-size: .8rem;
+    border-radius: .4rem;
+    transition: all .2s ease-in-out;
+	border-radius: 50rem!important;
+	padding: .4rem 1rem;
+    font-size: .8rem!important;
+    border-radius: .4rem;
+    margin: 5px 0px;
+}
+a.tag-cloud-link:hover{
+	transform: translateY(-.15rem);
+    color: rgb(34, 33, 33);
+}
+.cat-item a{
+    color:#9499a3!important;
+    font-weight: 500!important;
+}
+.cat-item a:hover{
+    color: #fab758!important;
+}
+
+.wp-block-latest-posts__post-title{
+    font-weight: bold;
+    color: #9499a3;
+    padding: 10px 0px;
+}
+
 
