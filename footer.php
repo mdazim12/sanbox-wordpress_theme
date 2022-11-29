@@ -42,14 +42,7 @@
     <!-- /.container -->
   </footer>
   
-  <?php
-    if((is_active_sidebar('footer_widgets_four' ))){
-      echo "Sidbar is here";
-    }
-    else{
-      echo "No sidebar is here!";
-    }
-  ?>
+
 
 <div class="progress-wrap">
     <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">

@@ -199,6 +199,9 @@ require_once __DIR__ . '/inc/redux-framework-master/redux-framework.php';
 require_once __DIR__ . '/inc/config.php';
 require_once __DIR__ . '/sidebar.php';
 
+require_once __DIR__ . '/inc/tgm/example.php';
+
+
 
  
 
