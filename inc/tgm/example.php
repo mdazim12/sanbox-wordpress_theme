@@ -116,6 +116,13 @@ function san_register_required_plugins() {
 			'required'           => true,
 		),
 
+		array(
+			'name'        => 'One Click Demo Import',
+			'slug'        => 'one-click-demo-import',
+			'is_callable' => 'wpseo_init',
+			'required'           => false,
+		),
+
 	);
 
 	/*
